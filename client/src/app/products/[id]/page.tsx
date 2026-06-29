@@ -1,7 +1,6 @@
 import ProductInteraction from "@/components/ProductInteraction";
 import { ProductType } from "@/Tyeps";
 import Image from "next/image";
-import { describe } from "node:test";
 
 // TEMPORARY
 const product: ProductType = {
@@ -24,13 +23,15 @@ const product: ProductType = {
 export const generateMetadata = async ({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) => {
-  // TODO:get the product from db
-  // TEMPORARY
+  const { id } = await params;
+
+  // TODO: fetch product using id
+
   return {
     title: product.name,
-    describe: product.description,
+    description: product.description,
   };
 };
 
