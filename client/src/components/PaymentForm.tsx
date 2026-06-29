@@ -14,9 +14,8 @@ const PaymentForm = () => {
     resolver: zodResolver(paymentFormSchema),
   });
 
-  const router = useRouter();
 
-  const hanlePaymentForm: SubmitHandler<PaymentFormInputs> = (data) => {};
+  const hanlePaymentForm: SubmitHandler<PaymentFormInputs> = () => {};
   return (
     <form
       className="flex flex-col gap-4"
